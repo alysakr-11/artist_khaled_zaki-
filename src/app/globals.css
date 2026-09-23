@@ -1,0 +1,298 @@
+@import "tailwindcss";
+
+@theme {
+  /* Travertine paper, basalt darks, porphyry red from the artist's original identity, bronze for accents on dark. */
+  --color-stone: #efebe4;
+  --color-stone-deep: #e3ddd2;
+  --color-ink: #16130f;
+  --color-ink-soft: #3f3931;
+  --color-ink-muted: #675e53;
+  --color-basalt: #141110;
+  --color-basalt-rise: #211c18;
+  --color-basalt-line: #3a322b;
+  --color-chalk: #f4f0e9;
+  --color-chalk-muted: #aca193;
+  --color-porphyry: #7a0e0e;
+  --color-porphyry-lift: #9c1f17;
+  --color-bronze: #d2a468;
+
+  --font-display: var(--font-cormorant), "Noto Naskh Arabic", Georgia, serif;
+  --font-sans: var(--font-manrope), var(--font-naskh), "Helvetica Neue", Arial, sans-serif;
+  --font-arabic: var(--font-naskh), var(--font-manrope), serif;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out-quint: cubic-bezier(0.83, 0, 0.17, 1);
+
+  --breakpoint-xs: 26rem;
+}
+
+:root {
+  color-scheme: light;
+  --gutter: clamp(1rem, 4vw, 3.5rem);
+  --header-h: 5.25rem;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--color-stone);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  overflow-x: clip;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--color-porphyry);
+  color: var(--color-chalk);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-porphyry);
+  outline-offset: 3px;
+}
+
+.on-dark :focus-visible,
+.on-dark:focus-visible {
+  outline-color: var(--color-bronze);
+}
+
+@layer components {
+  .wrap {
+    width: 100%;
+    max-width: 90rem;
+    margin-inline: auto;
+    padding-inline: var(--gutter);
+  }
+
+  .eyebrow {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-porphyry);
+  }
+
+  .on-dark .eyebrow {
+    color: var(--color-bronze);
+  }
+
+  .display {
+    font-family: var(--font-display);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    line-height: 0.86;
+  }
+
+  .display-italic {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 500;
+    text-transform: none;
+    letter-spacing: -0.01em;
+  }
+
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    min-height: 2.75rem;
+    padding: 0.7rem 1.4rem;
+    border-radius: 999px;
+    font-size: 0.74rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    transition:
+      background-color 0.4s var(--ease-out-expo),
+      color 0.4s var(--ease-out-expo),
+      border-color 0.4s var(--ease-out-expo),
+      transform 0.4s var(--ease-out-expo);
+  }
+
+  .pill svg {
+    transition: transform 0.5s var(--ease-out-expo);
+  }
+
+  .pill:hover svg {
+    transform: translate(2px, -2px);
+  }
+
+  .pill-solid {
+    background: var(--color-ink);
+    color: var(--color-chalk);
+  }
+
+  .pill-solid:hover {
+    background: var(--color-porphyry);
+  }
+
+  .pill-outline {
+    border: 1px solid color-mix(in srgb, currentColor 30%, transparent);
+  }
+
+  .pill-outline:hover {
+    border-color: currentColor;
+  }
+
+  .pill-accent {
+    background: var(--color-porphyry);
+    color: var(--color-chalk);
+  }
+
+  .pill-accent:hover {
+    background: var(--color-porphyry-lift);
+  }
+
+  .link-line {
+    background-image: linear-gradient(currentColor, currentColor);
+    background-size: 0% 1px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 0.6s var(--ease-out-expo);
+  }
+
+  .link-line:hover,
+  .link-line:focus-visible {
+    background-size: 100% 1px;
+  }
+
+  /* The curved tab where a light section hands over to a dark one. */
+  .notch {
+    position: relative;
+    height: 1.5rem;
+    margin-top: -1.5rem;
+    color: var(--color-basalt);
+    pointer-events: none;
+  }
+}
+
+/* Scroll reveals: content is visible by default and only animates once JS has opted in. */
+.js [data-reveal] {
+  opacity: 0;
+  transform: translateY(1.75rem);
+  transition:
+    opacity 1s var(--ease-out-expo),
+    transform 1.2s var(--ease-out-expo);
+  transition-delay: calc(var(--reveal-delay, 0) * 1ms);
+}
+
+.js [data-reveal].is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+.js [data-reveal="mask"] {
+  opacity: 1;
+  transform: none;
+  clip-path: inset(0 0 100% 0);
+  transition: clip-path 1.2s var(--ease-in-out-quint);
+  transition-delay: calc(var(--reveal-delay, 0) * 1ms);
+}
+
+.js [data-reveal="mask"].is-visible {
+  clip-path: inset(0 0 0 0);
+}
+
+/* Heading lines rise out of a mask, like the reference's title reveals. */
+.rise-line {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 0.06em;
+  margin-bottom: -0.06em;
+}
+
+.rise-line > span {
+  display: block;
+  animation: rise 1.3s var(--ease-out-expo) both;
+  animation-delay: calc(var(--rise-delay, 0) * 1ms + 80ms);
+}
+
+@keyframes rise {
+  from {
+    transform: translateY(105%);
+  }
+  to {
+    transform: none;
+  }
+}
+
+.fade-in {
+  animation: fade-in 1.2s var(--ease-out-expo) both;
+  animation-delay: calc(var(--fade-delay, 0) * 1ms);
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(0.75rem);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Route transitions (React <ViewTransition> + View Transitions API). */
+::view-transition-old(root) {
+  animation: 260ms var(--ease-out-expo) both vt-fade-out;
+}
+
+::view-transition-new(root) {
+  animation: 520ms var(--ease-out-expo) 120ms both vt-fade-in;
+}
+
+::view-transition-group(.artwork) {
+  animation-duration: 560ms;
+  animation-timing-function: var(--ease-out-expo);
+}
+
+::view-transition-group(site-header) {
+  animation: none;
+}
+
+@keyframes vt-fade-out {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes vt-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-delay: 0ms !important;
+    transition-duration: 0.01ms !important;
+    transition-delay: 0ms !important;
+  }
+
+  .js [data-reveal],
+  .js [data-reveal="mask"] {
+    opacity: 1;
+    transform: none;
+    clip-path: none;
+  }
+
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
+  }
+}

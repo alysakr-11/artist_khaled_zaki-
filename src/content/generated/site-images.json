@@ -1,0 +1,76 @@
+{
+ "home": [
+  {
+   "src": "/art/home/01.jpg",
+   "width": 1500,
+   "height": 1000,
+   "blur": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAADQAQCdASoQAAsAA4BaJZwAAucLP70FwAD94ScD139kLhixyMgLEL3yOSBQo/ivj5HvaSUHAiFYKIyqQSmGFlrVI3aoV3gJgokXhhAA"
+  },
+  {
+   "src": "/art/home/02.jpg",
+   "width": 2000,
+   "height": 1333,
+   "blur": "data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAAAwAgCdASoQAAsAA4BaJaQAAutszf5r2ShQAAD+7HelZOKFPBF9vPL1n9huWNZvK18LFw4m35tCCJcXiAA="
+  },
+  {
+   "src": "/art/home/03.jpg",
+   "width": 2000,
+   "height": 1333,
+   "blur": "data:image/webp;base64,UklGRkAAAABXRUJQVlA4IDQAAADwAQCdASoQAAsAA4BaJaQAAxZJ0/T7fAAA/vapLh9CjR+f8bDFXd/qBLxlYOzCnCcAybAA"
+  },
+  {
+   "src": "/art/home/04.jpg",
+   "width": 2000,
+   "height": 1333,
+   "blur": "data:image/webp;base64,UklGRkQAAABXRUJQVlA4IDgAAADwAQCdASoQAAsAA4BaJaQAAtz+J+rCzAAA/varqpKwtJxD22oLHkaw+WY3IGO++huUmeSv/0AAAA=="
+  },
+  {
+   "src": "/art/home/05.jpg",
+   "width": 2000,
+   "height": 1333,
+   "blur": "data:image/webp;base64,UklGRkQAAABXRUJQVlA4IDgAAADwAQCdASoQAAsAA4BaJaQAAubXNgdQAAAA/vaqb1f73mq3IgJRDUmda15Q1DVx2+DYwW8WymXAAA=="
+  },
+  {
+   "src": "/art/home/06.jpg",
+   "width": 2000,
+   "height": 1333,
+   "blur": "data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAADQAQCdASoQAAsAA4BaJaQAAqo/mV7DgAD+9qw3yytXSDLaejtG65a8JXN2Ixd2ea0VqEOedd97JtOHgAA="
+  },
+  {
+   "src": "/art/home/07.jpg",
+   "width": 2000,
+   "height": 1333,
+   "blur": "data:image/webp;base64,UklGRkQAAABXRUJQVlA4IDgAAADQAQCdASoQAAsAA4BaJaQAAtzO2CDAAAD+9qwCv3dvf+ipk7iOi8EimMfXCiFROWqbBA3qW9iAAA=="
+  },
+  {
+   "src": "/art/home/08.jpg",
+   "width": 2000,
+   "height": 1333,
+   "blur": "data:image/webp;base64,UklGRkQAAABXRUJQVlA4IDgAAADQAQCdASoQAAsAA4BaJaQAAtrR/auQAAD+9quqkrC0nEPEWbKe08cJUbdmGV00XIyOOcqJPmAAAA=="
+  },
+  {
+   "src": "/art/home/09.jpg",
+   "width": 2000,
+   "height": 1333,
+   "blur": "data:image/webp;base64,UklGRkIAAABXRUJQVlA4IDYAAADQAQCdASoQAAsAA4BaJaQAAup3gLlQ4AD+9qpvx942Y7bjjULo57kYyKrbmXtBncTb8RAAAAA="
+  },
+  {
+   "src": "/art/home/10.jpg",
+   "width": 2000,
+   "height": 1333,
+   "blur": "data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAADwAQCdASoQAAsAA4BaJaQAAuzXwUrBlIAA/vaqb5HukT5+adNYbZrNaBbbwVXXYJL9dlW41CiGuLaMgAA="
+  }
+ ],
+ "portrait": {
+  "src": "/art/site/portrait.jpg",
+  "width": 446,
+  "height": 700,
+  "blur": "data:image/webp;base64,UklGRk4AAABXRUJQVlA4IEIAAADwAQCdASoKABAAA4BaJaQAAxbKOrhqsAAA/so74ZNYlXYBP1Ozow5U/1o7kmt3tBgIYE7kqgtednlGTAL6+BAAAAA="
+ },
+ "heist": {
+  "src": "/art/news/heist-the-pregnant.jpg",
+  "width": 316,
+  "height": 158,
+  "blur": "data:image/webp;base64,UklGRkAAAABXRUJQVlA4IDQAAACQAQCdASoQAAgAA4BaJQBOgBBbGEAA/tA7COf7rLt+JlXx+nOHzr/TAID0iMNGsGW2wQAA"
+ }
+}
